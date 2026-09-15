@@ -4,8 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background: black;
+        }
+
+        img{
+            width: 500px;
+            height: 500px;
+        }
+
+        #show{
+            border: solid greenyellow;
+            color: white;
+            background: red;
+            padding: 10px 10px 10px 10px;
+        }
+
+        #show:hover{
+            animation: rotate360 0.1s infinite;
+        }
+
+        #hide{
+            border: solid blue;
+            color: white;
+            background: green;
+            padding: 10px 10px 10px 10px;
+        }
+
+        #hide:hover{
+            animation: rotate-360 0.1s infinite;
+        }
+
+        @keyframes rotate360 {
+            from{
+                rotate: 360deg;
+            }
+            to{
+                rotate: 0deg;
+            }
+        }
+
+        @keyframes rotate-360 {
+            from{
+                rotate: -360deg;
+            }
+            to{
+                rotate: 0deg;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+    <button id="show">Klikni pro zobrazení obrázku</button>
+    <button id="hide">Klikni pro skrytí obrázku</button>
+    <p id="text"></p>
+
+    <script src="main.js"></script>
 </body>
 </html>
