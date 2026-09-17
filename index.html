@@ -4,98 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
-            background: black;
-            width: 100%;
-            height: 100%;
-        }
-        button{
-            width: 100px;
-            height: auto;
-            padding: 10px 10px 10px 10px;
+            box-sizing: border-box;
         }
 
-        img{
+        body {
+            background: black;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        button {
+            width: 100px;
+            padding: 10px;
+        }
+
+        #catchPic {
             position: absolute;
             top: 100px;
-            width: 500px;
-            height: 500px;
-            animation: go 20s forwards infinite;
+            left: 0;
+
+            width: 300px;
+            height: 300px;
+
+            padding: 0;
+            border: none;
+            background: transparent;
+
+            animation: go 10s linear infinite;
+
+            cursor: pointer;
+            z-index: 10;
         }
 
-        #show{
+        #catchPic img {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+            object-fit: cover;
+
+            pointer-events: none;
+        }
+
+        #show {
             border: solid greenyellow;
             color: white;
             background: red;
         }
 
-        #show:hover{
-            animation: rotate360 0.1s infinite;
+        #show:hover {
+            animation: rotate360 0.1s linear infinite;
         }
 
-        #hide{
+        #hide {
             border: solid blue;
             color: white;
             background: green;
         }
 
-        #hide:hover{
-            animation: rotate-360 0.1s infinite;
+        #hide:hover {
+            animation: rotate-360 0.1s linear infinite;
+        }
+
+        #score {
+            color: white;
         }
 
         @keyframes rotate360 {
-            from{
-                rotate: 360deg;
-            }
-            to{
+            from {
                 rotate: 0deg;
+            }
+
+            to {
+                rotate: 360deg;
             }
         }
 
         @keyframes rotate-360 {
-            from{
-                rotate: -360deg;
-            }
-            to{
+            from {
                 rotate: 0deg;
+            }
+
+            to {
+                rotate: -360deg;
             }
         }
 
         @keyframes go {
-            from{
-                position: absolute;
-                top: 100px;
+            0% {
+                transform: translate(0, 0);
             }
-            25%{
-                position: absolute;
-                top: 100px;
-                right: 0px;
+
+            25% {
+                transform: translate(
+                    calc(100vw - 500px),
+                    0
+                );
             }
-            50%{
-                position: absolute;
-                bottom: 0%;
-                right: 0%;
+
+            50% {
+                transform: translate(
+                    calc(100vw - 500px),
+                    calc(100vh - 600px)
+                );
             }
-            75%{
-                position: absolute;
-                bottom: 0%;
-                left: 0%;
+
+            75% {
+                transform: translate(
+                    0,
+                    calc(100vh - 600px)
+                );
             }
-            to{
-                position: absolute;
-                top: 100px;
+
+            100% {
+                transform: translate(0, 0);
             }
         }
     </style>
 </head>
+
 <body>
+
     <button id="show">Klikni pro zobrazení obrázku</button>
     <button id="hide">Klikni pro skrytí obrázku</button>
+
+    <p id="score">Skore: 0/50</p>
+
     <p id="text"></p>
 
     <script src="main.js"></script>
+
 </body>
 </html>
