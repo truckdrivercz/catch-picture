@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,8 +36,6 @@
             padding: 0;
             border: none;
             background: transparent;
-
-            animation: go 10s linear infinite;
 
             cursor: pointer;
             z-index: 10;
@@ -95,37 +94,6 @@
                 rotate: -360deg;
             }
         }
-
-        @keyframes go {
-            0% {
-                transform: translate(0, 0);
-            }
-
-            25% {
-                transform: translate(
-                    calc(100vw - 500px),
-                    0
-                );
-            }
-
-            50% {
-                transform: translate(
-                    calc(100vw - 500px),
-                    calc(100vh - 600px)
-                );
-            }
-
-            75% {
-                transform: translate(
-                    0,
-                    calc(100vh - 600px)
-                );
-            }
-
-            100% {
-                transform: translate(0, 0);
-            }
-        }
     </style>
 </head>
 
@@ -134,11 +102,12 @@
     <button id="show">Klikni pro zobrazení obrázku</button>
     <button id="hide">Klikni pro skrytí obrázku</button>
 
-    <p id="score">Skore: 0/50</p>
+    <p id="score">Skore: 0/20</p>
 
     <p id="text"></p>
 
     <script src="main.js"></script>
 
 </body>
+
 </html>
